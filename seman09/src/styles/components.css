@@ -1,0 +1,225 @@
+/* Componentes: navegación, hero, tarjetas de película y horarios. */
+
+/* Navegación */
+.site-header__title {
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.site-nav a {
+  color: var(--color-muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-text);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: stretch;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.hero__content {
+  display: grid;
+  align-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.hero__eyebrow {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.hero__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hero__rating {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hero__synopsis {
+  max-width: 55ch;
+  color: var(--color-muted);
+}
+
+/* Botón */
+.button {
+  justify-self: start;
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--color-accent-strong);
+}
+
+/* Cartelera */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+.movie-list__item {
+  display: flex;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.movie-card__image {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--color-surface-2);
+}
+
+.movie-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.movie-card__title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.movie-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.movie-card__rating {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.movie-card__synopsis {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.movie-card__subtitle {
+  margin-top: var(--space-2);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.showtimes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.showtimes li {
+  padding: 0.15rem var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.showtimes-empty {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.site-footer__brand {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.site-footer a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer__copy {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__image {
+    min-height: 240px;
+  }
+
+  .hero__content {
+    padding: var(--space-5);
+  }
+}

@@ -1,0 +1,6 @@
+/* Punto de entrada de la arquitectura CSS.
+   El orden importa: variables -> base -> layout -> componentes. */
+@import './variables.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';

@@ -1,0 +1,49 @@
+/* Estructura de la página: contenedores, header, main y footer. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(15, 17, 21, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner,
+.main,
+.site-footer__inner {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.site-header__inner {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding-block: var(--space-3);
+}
+
+.main {
+  display: grid;
+  gap: var(--space-7);
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.section__title {
+  margin-bottom: var(--space-4);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.site-footer {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: var(--space-1);
+  font-size: 0.95rem;
+}
