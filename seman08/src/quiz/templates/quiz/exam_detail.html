@@ -1,0 +1,31 @@
+{% extends "quiz/base.html" %}
+
+{% block title %}{{ exam.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ exam.title }}</h2>
+    <p>{{ exam.description }}</p>
+    <p><small>Creado el {{ exam.created_at|date:"d/m/Y H:i" }}</small></p>
+
+    <h3>Preguntas</h3>
+    {% if exam.questions.all %}
+        {% for question in exam.questions.all %}
+            <div>
+                <p><strong>{{ forloop.counter }}. {{ question.text }}</strong></p>
+                <ul>
+                    {% for choice in question.choices.all %}
+                        <li{% if choice.is_correct %} style="font-weight: bold; color: green;"{% endif %}>
+                            {{ choice.text }}{% if choice.is_correct %} (correcta){% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Este examen todavia no tiene preguntas.</p>
+    {% endif %}
+
+    <p>
+        <a href="{% url 'quiz:question_create' exam_pk=exam.pk %}">Agregar pregunta</a>
+    </p>
+{% endblock %}

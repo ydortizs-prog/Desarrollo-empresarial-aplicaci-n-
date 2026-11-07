@@ -1,0 +1,30 @@
+{% extends "quiz/base.html" %}
+
+{% block title %}Examenes{% endblock %}
+
+{% block content %}
+    <h2>Examenes</h2>
+
+    {% if exams %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de creacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exam in exams %}
+                    <tr>
+                        <td><a href="{% url 'quiz:exam_detail' pk=exam.pk %}">{{ exam.title }}</a></td>
+                        <td>{{ exam.description|truncatewords:15 }}</td>
+                        <td>{{ exam.created_at|date:"d/m/Y H:i" }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Todavia no hay examenes cargados.</p>
+    {% endif %}
+{% endblock %}

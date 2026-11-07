@@ -1,0 +1,10 @@
+{
+  "exam": 1,
+  "text": "¿Qué clase de DRF publica un recurso completo?",
+  "score": 2,
+  "choices": [
+    {"text": "ModelViewSet", "is_correct": true},
+    {"text": "APIView", "is_correct": false},
+    {"text": "TemplateView", "is_correct": false}
+  ]
+}
